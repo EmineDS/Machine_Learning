@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression,Ridge
 import sklearn.metrics as mt
 import matplotlib.pyplot as plt
-data=pd.read_csv(R"Linear_Regression/advertising.csv")
+data=pd.read_csv(R"../Linear_Regression/advertising.csv")
 veri=data.copy()
 print(veri)
 y=veri["Sales"]
