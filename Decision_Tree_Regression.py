@@ -13,13 +13,14 @@ X=np.array(X).reshape(-1,1)
 print(X,y)
 
 dtr=DecisionTreeRegressor(random_state=0,max_leaf_nodes=3)
-#max_leaf_nodes elimizde kaç tane sonuç seçeneği olduğunu belirlememizi sağlar
+#max_leaf_nodes elimizde kaç tane sonuç seçeneği olduğunu belirlememizi sağlar BU DA BİR HİPERPARAMETREDİR
 dtr.fit(X,y) #train data setleriyle eğiticez
-tahmin=dtr.predict(X)
+tahmin=dtr.predict(X)#TEST VEİ SETİYLE TAHMİN MODELİ OLUŞTURUYORUZ
 
 plt.scatter(X,y,color="red")
 plt.plot(X,tahmin)
 #tahmin değerleirmiz gerçeğe ne adar uygun ona bakıyoruz
+#bunu yaparken sürekli değerlerin(yani çizgi grafiğinin)tahmin değerleri olduğunu unutmamak lazım
 plt.show()
 plt.figure(figsize=(20,10),dpi=100)
 plot_tree(dtr,feature_names=X,class_names=y,rounded=True,filled=True)
